@@ -1,10 +1,12 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const ads = require('./routes/ads');
 const categories = require('./routes/categories');
-const authorization = require('./routes/authorization');
+const register = require('./routes/register');
+const login = require('./routes/login');
+const logout = require('./routes/logout');
 
 const db = require("./config/keys").mongoURI;
 
@@ -13,9 +15,18 @@ mongoose
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log('greska ' + err));
 
-app.use(['/kategorije', '/'], categories);
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
+
+app.use(['/naslovnica', '/'], categories);
 app.use('/oglasi', ads);
-app.use(['/prijava', '/registracija', '/odjava'], authorization);
+ app.use('/prijava', login);
+// app.use('/odjava', logout);
+app.use('/registracija', register);
 
 const port = process.env.PORT || 5000;
 
