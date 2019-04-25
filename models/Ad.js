@@ -48,12 +48,12 @@ const AdSchema = new Schema({
         required: true
     },
 
-    jobStartDate: {
+    jobstartdate: {
         type: Date,
         default: Date.now()
     },
 
-    adExpirationDate: {
+    adexpirationdate: {
         type: Date,
         default: Date.now()
     },

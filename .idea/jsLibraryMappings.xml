@@ -2,6 +2,6 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{sezonac/node_modules}" />
-    <file url="PROJECT" libraries="{@types/bcryptjs, @types/body-parser, @types/express, @types/jsonwebtoken, @types/mongoose, @types/validator, sezonac/node_modules}" />
+    <file url="PROJECT" libraries="{@types/bcryptjs, @types/body-parser, @types/express, @types/jsonwebtoken, @types/mongoose, @types/passport, @types/passport-jwt, @types/validator, sezonac/node_modules}" />
   </component>
 </project>

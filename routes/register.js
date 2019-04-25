@@ -7,8 +7,6 @@ const Employer = require('../models/Employer');
 
 const router = express.Router();
 
-router.get('/', (req, res) => res.send('authorization works'));
-
 /**
  * @route Post /registracija
  * @description Register employer
@@ -43,14 +41,8 @@ router.post('/', (req, res) => {
                     });
                     newEmployer.save().then(employer => res.json(employer)).catch(err => console.log(err));
                 });
-
-
             })
-
-
         })
-
-
 });
 
 module.exports = router;
