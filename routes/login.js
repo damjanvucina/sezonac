@@ -15,7 +15,7 @@ const keys = require("../config/keys");
 router.post("/", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
-    res.status(400).json(errors);
+    return res.status(400).json(errors);
   }
 
   const { email, password } = req.body;
