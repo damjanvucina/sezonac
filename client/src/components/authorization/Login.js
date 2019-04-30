@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import axios from "axios";
 import PropTypes from "prop-types";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 import { loginUser } from "../../actions/authActions";
 
@@ -63,46 +64,30 @@ class Login extends Component {
             Prijavite se kako bi mogli stvarati nove oglase.
           </p>
 
-          <label htmlFor="email" className="sr-only">
-            Email adresa
-          </label>
-          <input
+          <TextFieldGroup
             type="email"
             id="email"
             name="email"
-            className={classnames("form-control rounded-top", {
-              "is-invalid": errors.email
-            })}
+            error={errors.email}
             placeholder="Email adresa"
             value={this.state.email}
             onChange={this.onChange}
-            required
-            autoFocus
+            label="Email adresa"
+            defaultClasses="form-control rounded-top"
           />
-          {errors.email && (
-            <div className="invalid-feedback auth-warning">{errors.email}</div>
-          )}
 
-          <label htmlFor="password" className="sr-only">
-            Password
-          </label>
-          <input
+          <TextFieldGroup
             type="password"
             id="password"
             name="password"
-            className={classnames("form-control rounded-bottom", {
-              "is-invalid": errors.password
-            })}
+            error={errors.password}
             placeholder="Šifra"
             value={this.state.password}
             onChange={this.onChange}
-            required
+            label="Šifra"
+            defaultClasses="form-control rounded-bottom"
           />
-          {errors.password && (
-            <div className="invalid-feedback auth-warning">
-              {errors.password}
-            </div>
-          )}
+
           <br />
           <button className="btn btn-lg btn-dark btn-block" type="submit">
             Prijavi se

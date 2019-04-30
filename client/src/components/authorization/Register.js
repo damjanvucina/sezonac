@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { registerUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Register extends Component {
   constructor(props) {
@@ -68,84 +69,53 @@ class Register extends Component {
             objavljivati oglase.
           </p>
 
-          <label htmlFor="name" className="sr-only">
-            Ime poslodavca
-          </label>
-          <input
+          <TextFieldGroup
             type="text"
             id="name"
             name="name"
-            // className="form-control"
-            className={classnames("form-control rounded-top", {
-              "is-invalid": errors.name
-            })}
+            error={errors.name}
             placeholder="Ime poslodavca"
             value={this.state.name}
             onChange={this.onChange}
-            autoFocus
+            label="Ime poslodavca"
+            defaultClasses="form-control rounded-top"
           />
-          {errors.name && (
-            <div className="invalid-feedback auth-warning">{errors.name}</div>
-          )}
-          <label htmlFor="email" className="sr-only">
-            Email adresa
-          </label>
-          <input
+
+          <TextFieldGroup
             type="email"
             id="email"
             name="email"
-            className={classnames("form-control rounded-0", {
-              "is-invalid": errors.email
-            })}
+            error={errors.email}
             placeholder="Email adresa"
             value={this.state.email}
             onChange={this.onChange}
-            autoFocus
+            label="Email adresa"
+            defaultClasses="form-control rounded-0"
           />
-          {errors.email && (
-            <span className="invalid-feedback auth-warning">
-              {errors.email}
-            </span>
-          )}
-          <label htmlFor="password" className="sr-only">
-            Password
-          </label>
-          <input
+
+          <TextFieldGroup
             type="password"
             id="password"
             name="password"
-            className={classnames("form-control rounded-0", {
-              "is-invalid": errors.password
-            })}
+            error={errors.password}
             placeholder="Šifra"
             value={this.state.password}
             onChange={this.onChange}
+            label="Šifra"
+            defaultClasses="form-control rounded-0"
           />
-          {errors.password && (
-            <div className="invalid-feedback auth-warning">
-              {errors.password}
-            </div>
-          )}
 
-          <label htmlFor="password2" className="sr-only">
-            Potvrdi šifru
-          </label>
-          <input
+          <TextFieldGroup
             type="password"
             id="password2"
             name="password2"
-            className={classnames("form-control rounded-bottom", {
-              "is-invalid": errors.password2
-            })}
+            error={errors.password2}
             placeholder="Potvrdi šifru"
             value={this.state.password2}
             onChange={this.onChange}
+            label="Potvrdi šifru"
+            defaultClasses="form-control rounded-bottom"
           />
-          {errors.password2 && (
-            <div className="invalid-feedback auth-warning">
-              {errors.password2}
-            </div>
-          )}
           <br />
           <button className="btn btn-lg btn-dark btn-block" type="submit">
             Registriraj se

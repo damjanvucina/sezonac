@@ -53,6 +53,9 @@ class Navbar extends Component {
             Sezonac
           </Link>
         </h5>
+        {isAuthenticated ? (
+          <span className="pr-3 text-muted">{this.props.auth.user.name}</span>
+        ) : null}
 
         <nav className="my-2 my-md-0 mr-md-3">
           {isAuthenticated ? loggedLinks : guestLinks}

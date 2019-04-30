@@ -10,6 +10,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/authorization/Register";
 import Login from "./components/authorization/Login";
+import PublishAd from "./components/ads/PublishAd";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
@@ -36,6 +37,8 @@ function App() {
           {/*<Route exact path="/" component={Landing} />*/}
           <Route exact path="/registracija" component={Register} />
           <Route exact path="/prijava" component={Login} />
+          <Route exact path="/oglasi/novi" component={PublishAd} />
+
           <Footer />
         </Router>
       </Provider>
