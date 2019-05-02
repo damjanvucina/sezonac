@@ -19,7 +19,7 @@ class Navbar extends Component {
     if (!this.props.auth.isAuthenticated) {
       this.props.history.push("/registracija");
     } else {
-      this.props.history.push("/objava-oglasa");
+      this.props.history.push("/oglasi/novi");
     }
   }
 
@@ -62,7 +62,7 @@ class Navbar extends Component {
           <Link
             className="navbar-link p-2 text-dark"
             onClick={this.onPublishAdClick.bind(this)}
-            to={"/objava-oglasa"}
+            to={"/oglasi/novi"}
           >
             Predaja oglasa
           </Link>
