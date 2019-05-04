@@ -2,8 +2,7 @@ import React, { Fragment } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-const TextFieldGroup = ({
-  type,
+const TextAreaInputGroup = ({
   id,
   name,
   error,
@@ -14,21 +13,28 @@ const TextFieldGroup = ({
   defaultClasses
 }) => {
   return (
-    <div className="form-group mb-0">
-      <label htmlFor={name} className="sr-only">
+    <div className="input-group">
+      <label htmlFor={name} className="sr-only labela">
         {label}
       </label>
-
-      <input
-        type={type}
+      <div className="input-group-prepend">
+        <span
+          className="input-group-text input-fixed-duljina rounded-0  labela"
+          id="basic-addon1"
+        >
+          {label}
+        </span>
+      </div>
+      <textarea
         id={id}
         name={name}
         className={classnames(defaultClasses, {
           "is-invalid": error
         })}
         placeholder={placeholder}
-        value={value}
         onChange={onChange}
+        value={value}
+        rows={3}
         required
         autoFocus
       />
@@ -37,8 +43,7 @@ const TextFieldGroup = ({
   );
 };
 
-TextFieldGroup.propTypes = {
-  type: PropTypes.string.isRequired,
+TextAreaInputGroup.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   error: PropTypes.string,
@@ -49,4 +54,4 @@ TextFieldGroup.propTypes = {
   defaultClasses: PropTypes.string.isRequired
 };
 
-export default TextFieldGroup;
+export default TextAreaInputGroup;

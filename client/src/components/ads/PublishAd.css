@@ -82,3 +82,8 @@ body {
 .input-fixed-duljina {
   width: 160px;
 }
+
+.auth-warning {
+  text-align: left;
+  padding-bottom: 6px;
+}
