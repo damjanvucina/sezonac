@@ -58,6 +58,16 @@ const AdSchema = new Schema({
     default: Date.now()
   },
 
+  createdat: {
+    type: Date,
+    default: Date.now()
+  },
+
+  updatedat: {
+    type: Date,
+    default: Date.now()
+  },
+
   contact: {
     type: String,
     required: true

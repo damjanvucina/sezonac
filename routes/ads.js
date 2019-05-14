@@ -23,9 +23,7 @@ router.get("/", (req, res) => {
   }
 
   let query = Ad.find(conditions);
-  if (sort !== undefined) {
-    query = query.sort(sort);
-  }
+  query = sort !== undefined ? query.sort(sort) : query.sort("createdat");
 
   query.exec((err, docs) => {
     res.json(docs);

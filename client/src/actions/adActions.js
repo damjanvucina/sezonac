@@ -36,16 +36,6 @@ export const filterAds = (category, history) => dispatch => {
       dispatch(setCurrentCategory(category));
       dispatch(setCurrentAds(res.data));
 
-      // dispatch({
-      //   type: CHANGE_CATEGORY,
-      //   payload: category
-      // });
-      //
-      // dispatch({
-      //   type: FILTER_ADS,
-      //   payload: res.data
-      // });
-
       history.push(`/oglasi?category=${category}`);
     })
     .catch(err => {

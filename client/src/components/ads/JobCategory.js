@@ -24,17 +24,12 @@ class JobCategory extends Component {
     }
 
     if (nextProps.ads) {
-      // console.log("tip je");
-      // console.log(typeof nextProps.ads);
       this.setState({ ads: nextProps.ads });
     }
   }
 
   render() {
     const { ads, category } = this.props.ads;
-
-    console.log(ads);
-    console.log(category);
 
     const adsCards = ads.map(ad => (
       <AdCard
@@ -50,6 +45,7 @@ class JobCategory extends Component {
         jobstartdate={ad.jobstartdate}
         adexpirationdate={ad.adexpirationdate}
         contact={ad.contact}
+        createdat={ad.createdat}
       />
     ));
     return (
@@ -59,7 +55,7 @@ class JobCategory extends Component {
         </div>
 
         <div className="row">
-          <SearchBar />
+          <SearchBar filterAdsFr={filterAds} />
 
           <div className="col-md-8 order-md-1">
             <h4 className="d-flex justify-content-between align-items-center mb-3">

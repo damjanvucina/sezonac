@@ -13,6 +13,7 @@ const SelectListInputGroup = ({
   defaultClasses,
   options,
   defaultOption,
+  selectedOption,
   disabled,
   isSearchBar
 }) => {
@@ -42,14 +43,12 @@ const SelectListInputGroup = ({
         })}
         placeholder={placeholder}
         onChange={onChange}
-        value={value}
         disabled={disabled}
+        value={value}
         required
         autoFocus
       >
-        <option value="DEFAULT" disabled>
-          {defaultOption}
-        </option>
+        <option value="DEFAULT">{defaultOption}</option>
         {options
           ? options.map(optionItem => (
               <option key={optionItem}>{optionItem}</option>
@@ -71,7 +70,7 @@ SelectListInputGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   defaultClasses: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.array,
   defaultOption: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   disablePrepend: PropTypes.bool,

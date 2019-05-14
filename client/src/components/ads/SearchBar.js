@@ -9,6 +9,7 @@ import getDefaultCategoryOptions from "../../utils/getDefaultCategoryOptions";
 import getDefaultSalaryFrequencyOptions from "../../utils/getDefaultSalaryFrequencyOptions";
 import getDefaultSortOptions from "../../utils/getDefaultSortOptions";
 import InputGroup from "../common/InputGroup";
+import isEmpty from "../../utils/isEmpty";
 
 class SearchBar extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class SearchBar extends Component {
     this.state = {
       region: "DEFAULT",
       city: "DEFAULT",
-      category: "DEFAULT",
+      // category: "DEFAULT",
+      category: this.props.ads.category,
       frequency: "DEFAULT",
       amountFrom: "",
       amountTo: "",
@@ -26,7 +28,8 @@ class SearchBar extends Component {
       regionOptions: regions,
       cityOptions: [],
       errors: {},
-      sort: ""
+      sort: "",
+      filterAdsFr: this.props.filterAdsFr
     };
 
     this.onChange = this.onChange.bind(this);
@@ -35,24 +38,32 @@ class SearchBar extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+
+    // console.log(e.target.name + " " + e.target.value);
+    if (e.target.name === "region" && e.target.value === "DEFAULT") {
+      this.setState({ city: "DEFAULT" });
+    }
   }
 
   onSubmit(e) {
     e.preventDefault();
 
+    // console.log("kat je " + this.state.region);
+
     const searchOptions = {
       region: this.state.region,
-      city: this.state.city,
+      city: this.state.region === "DEFAULT" ? "DEFAULT" : this.state.city,
       category: this.state.category,
       frequency: this.state.frequency,
       amountFrom: this.state.amountFrom,
       amountTo: this.state.amountTo,
-      jobstartdate: this.state.jobstartdate,
-      adexpirationdate: this.state.adexpirationdate,
       sort: this.state.sort
     };
 
-    console.log(searchOptions);
+    // console.log(searchOptions);
+    // this.countFilters();
+
+    this.state.filterAdsFr();
   }
 
   regionSelected(e) {
@@ -62,14 +73,35 @@ class SearchBar extends Component {
     this.setState({ cityOptions: cities });
   }
 
+  countFilters() {
+    let filterCounter = 0;
+    // console.log("----------------");
+    for (const [key, value] of Object.entries(this.state)) {
+      // console.log(key + ": " + value);
+      if (
+        value !== "DEFAULT" &&
+        !isEmpty(value) &&
+        key !== "regionOptions" &&
+        key !== "cityOptions"
+      ) {
+        // console.log(key + ": " + value);
+        filterCounter++;
+      }
+    }
+    // console.log("----------------");
+    return filterCounter;
+  }
+
   render() {
-    const { regionOptions, cityOptions, errors } = this.state;
+    const { regionOptions, cityOptions, errors, category } = this.state;
 
     return (
       <div className="col-md-4 order-md-2 mb-4">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span className="text-muted">Filtri</span>
-          <span className="badge badge-secondary badge-pill">3</span>
+          <span className="badge badge-secondary badge-pill">
+            {this.countFilters()}
+          </span>
         </h4>
 
         <SelectListInputGroup
@@ -83,6 +115,7 @@ class SearchBar extends Component {
           defaultClasses="form-control rounded-0"
           options={[...getDefaultCategoryOptions(), "Sve kategorije"]}
           defaultOption="Odaberite kategoriju"
+          selectedOption={this.props.ads.category}
           isSearchBar={true}
         />
 
@@ -107,7 +140,7 @@ class SearchBar extends Component {
           placeholder="Mjesto"
           value={this.state.city}
           onChange={this.onChange}
-          disabled={cityOptions.length === 0}
+          disabled={cityOptions === undefined || cityOptions.length === 0}
           label="Mjesto"
           defaultClasses="form-control rounded-0"
           options={cityOptions}
@@ -169,7 +202,7 @@ class SearchBar extends Component {
           label="Sortiraj"
           defaultClasses="form-control rounded-0"
           options={getDefaultSortOptions()}
-          defaultOption="Sortiraj"
+          defaultOption="Odaberi"
           isSearchBar={true}
         />
 
@@ -177,6 +210,7 @@ class SearchBar extends Component {
         <button
           className="btn btn-lg btn-dark btn-block rounded-0"
           type="submit"
+          onClick={this.onSubmit}
         >
           Primjeni
         </button>
@@ -188,7 +222,9 @@ class SearchBar extends Component {
 SearchBar.propTypes = {
   errors: PropTypes.object.isRequired,
   ads: PropTypes.object.isRequired,
-  cityOptions: PropTypes.array
+  cityOptions: PropTypes.array,
+  category: PropTypes.string,
+  filterAdsFr: PropTypes.func
 };
 
 const mapStateToProps = state => ({

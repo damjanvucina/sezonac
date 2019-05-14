@@ -17,7 +17,8 @@ class AdCard extends Component {
       description,
       jobstartdate,
       adexpirationdate,
-      contact
+      contact,
+      createdat
     } = this.props;
 
     const moment = require("moment");
@@ -46,6 +47,10 @@ class AdCard extends Component {
                 </h2>
                 <table className="table">
                   <tbody>
+                    <tr>
+                      <th>Kategorija</th>
+                      <td>{category}</td>
+                    </tr>
                     <tr>
                       <th>Opis</th>
                       <td>{description}</td>
@@ -78,9 +83,11 @@ class AdCard extends Component {
                     </tr>
                   </tbody>
                 </table>
-              </div>
-              <div className="card-footer text-muted text-center bg-light">
-                Ugostiteljstvo
+                <div className="text-muted text-center">
+                  <small>
+                    Objavljeno: <Moment fromNow>{createdat}</Moment>
+                  </small>
+                </div>
               </div>
             </div>
           </div>
