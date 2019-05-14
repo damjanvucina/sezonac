@@ -12,7 +12,9 @@ const InputGroup = ({
   onChange,
   label,
   defaultClasses,
-  appendix
+  appendix,
+  disabled,
+  isSearchBar
 }) => {
   return (
     <div className="input-group">
@@ -21,7 +23,10 @@ const InputGroup = ({
       </label>
       <div className="input-group-prepend">
         <span
-          className="input-group-text input-fixed-duljina rounded-0  labela"
+          className={classnames("input-group-text rounded-0", {
+            "input-fixed-duljina labela": !isSearchBar,
+            "input-fixed-duljina-sm": isSearchBar
+          })}
           id="basic-addon1"
         >
           {label}
@@ -37,6 +42,7 @@ const InputGroup = ({
         placeholder={placeholder}
         onChange={onChange}
         value={value}
+        disabled={disabled}
         required
         autoFocus
       />
@@ -59,11 +65,11 @@ InputGroup.propTypes = {
   name: PropTypes.string.isRequired,
   error: PropTypes.string,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   defaultClasses: PropTypes.string.isRequired,
-  appendix: PropTypes.string
+  appendix: PropTypes.string,
+  isSearchBar: PropTypes.bool
 };
 
 export default InputGroup;

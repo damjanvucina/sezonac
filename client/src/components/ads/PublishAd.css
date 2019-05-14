@@ -83,6 +83,10 @@ body {
   width: 160px;
 }
 
+.input-fixed-duljina-sm {
+  width: 130px;
+}
+
 .auth-warning {
   text-align: left;
   padding-bottom: 6px;

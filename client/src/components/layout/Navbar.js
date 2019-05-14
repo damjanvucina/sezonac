@@ -64,7 +64,7 @@ class Navbar extends Component {
             onClick={this.onPublishAdClick.bind(this)}
             to={"/oglasi/novi"}
           >
-            Predaja oglasa
+            Predaj oglas
           </Link>
         </nav>
       </div>

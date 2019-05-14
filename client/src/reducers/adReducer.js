@@ -1,8 +1,9 @@
-import { CREATE_NEW_AD } from "../actions/types";
+import { CREATE_NEW_AD, FILTER_ADS, CHANGE_CATEGORY } from "../actions/types";
 
 const initialState = {
   ads: [],
-  ad: {}
+  ad: {},
+  category: ""
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +12,18 @@ export default function(state = initialState, action) {
       return {
         ...state,
         ads: [action.payload, ...state.ads]
+      };
+
+    case FILTER_ADS:
+      return {
+        ...state,
+        ads: action.payload
+      };
+
+    case CHANGE_CATEGORY:
+      return {
+        ...state,
+        category: action.payload
       };
 
     default:

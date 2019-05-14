@@ -5,7 +5,7 @@ import "./PublishAd.css";
 import regions from "./regions";
 import filterCitiesByRegion from "../../utils/filterCitiesByRegion";
 import getDefaultCategoryOptions from "../../utils/getDefaultCategoryOptions";
-import getDefaultSalaryFrequencyOptions from "../../utils/getDefaultCategoryOptions";
+import getDefaultSalaryFrequencyOptions from "../../utils/getDefaultSalaryFrequencyOptions";
 import { createNewAd } from "../../actions/adActions";
 import { withRouter } from "react-router-dom";
 import InputGroup from "../common/InputGroup";
@@ -44,6 +44,9 @@ class PublishAd extends Component {
     if (nextProps.cityOptions) {
       this.setState({ cityOptions: nextProps.cityOptions });
     }
+    if (!nextProps.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
   }
 
   componentDidMount() {
@@ -58,6 +61,7 @@ class PublishAd extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    const moment = require("moment");
 
     const Ad = {
       region: this.state.region,
@@ -67,8 +71,8 @@ class PublishAd extends Component {
       frequency: this.state.frequency,
       amount: this.state.amount,
       description: this.state.description,
-      jobstartdate: this.state.jobstartdate,
-      adexpirationdate: this.state.adexpirationdate,
+      jobstartdate: moment(this.state.jobstartdate),
+      adexpirationdate: moment(this.state.adexpirationdate),
       contact: this.state.contact
     };
 
@@ -94,10 +98,23 @@ class PublishAd extends Component {
           <p className="mb-4 lead">Opišite o kakvom poslu se radi.</p>
 
           <SelectListInputGroup
+            id="category"
+            name="category"
+            error={errors.category}
+            placeholder="Kategorija posla"
+            value={this.state.category}
+            onChange={this.onChange}
+            label="Kategorija posla"
+            defaultClasses="form-control rounded-0"
+            options={getDefaultCategoryOptions()}
+            defaultOption="Odaberite kategoriju posla"
+          />
+
+          <SelectListInputGroup
             id="region"
             name="region"
             error={errors.region}
-            placeholder="Traženo radnika"
+            placeholder="Odaberite županiju rada"
             value={this.state.region}
             onChange={this.regionSelected.bind(this)}
             label="Odaberite županiju"
@@ -118,19 +135,6 @@ class PublishAd extends Component {
             defaultClasses="form-control rounded-0"
             options={cityOptions}
             defaultOption="Odaberite mjesto rada"
-          />
-
-          <SelectListInputGroup
-            id="category"
-            name="category"
-            error={errors.category}
-            placeholder="Kategorija posla"
-            value={this.state.category}
-            onChange={this.onChange}
-            label="Kategorija posla"
-            defaultClasses="form-control rounded-0"
-            options={getDefaultCategoryOptions()}
-            defaultOption="Odaberite kategoriju posla"
           />
 
           <InputGroup

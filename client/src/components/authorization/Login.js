@@ -27,7 +27,7 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/naslovnica");
+      this.props.history.push("/");
     }
   }
 
@@ -36,7 +36,7 @@ class Login extends Component {
       this.setState({ errors: nextProps.errors });
     }
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/naslovnica");
+      this.props.history.push("/");
     }
   }
 

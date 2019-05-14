@@ -5,6 +5,33 @@ const passport = require("passport");
 const validateAdInput = require("../validation/ad");
 const Ad = require("../models/Ad");
 
+router.get("/", (req, res) => {
+  const conditions = {};
+  let sort;
+
+  for (const [key, value] of Object.entries(req.query)) {
+    conditions[key] = value;
+  }
+
+  if (conditions.kategorije === "sve") {
+    delete conditions.kategorije;
+  }
+
+  if (conditions.sort) {
+    sort = conditions.sort;
+    delete conditions.sort;
+  }
+
+  let query = Ad.find(conditions);
+  if (sort !== undefined) {
+    query = query.sort(sort);
+  }
+
+  query.exec((err, docs) => {
+    res.json(docs);
+  });
+});
+
 /**
  * @route Post /oglasi/novi || oglasi/uredi/oglas_id
  * @description Create a new ad or edit an existing one
@@ -90,40 +117,5 @@ router.post(
     }
   }
 );
-
-router.get("/", (req, res) => {
-  // Ad.find(req.params.category_id === 'sve' ? {} : {category: req.params.category_id}, (err, docs) => {
-  //     res.json(docs);
-  // });
-
-  const query = {};
-  let sort;
-
-  for (const [key, value] of Object.entries(req.query)) {
-    query[key] = value;
-  }
-
-  if (query.kategorije === "sve") {
-    delete query.kategorije;
-  }
-
-  if (query.sort) {
-    sort = query.sort;
-    delete query.sort;
-  }
-
-  const current = Ad.find(query);
-  if (sort !== undefined) {
-    current.sort(sort);
-  }
-
-  // res.json(query);
-  // current.sort({'salary.amount': 'desc'});
-  // current.where('salary.amount').gt(100);
-
-  current.exec((err, docs) => {
-    res.json(docs);
-  });
-});
 
 module.exports = router;

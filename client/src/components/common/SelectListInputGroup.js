@@ -13,21 +13,27 @@ const SelectListInputGroup = ({
   defaultClasses,
   options,
   defaultOption,
-  disabled
+  disabled,
+  isSearchBar
 }) => {
   return (
     <div className="input-group">
       <label htmlFor={name} className="sr-only labela">
         {label}
       </label>
+
       <div className="input-group-prepend">
         <span
-          className="input-group-text input-fixed-duljina rounded-0  labela"
+          className={classnames("input-group-text rounded-0", {
+            "input-fixed-duljina labela": !isSearchBar,
+            "input-fixed-duljina-sm": isSearchBar
+          })}
           id="basic-addon1"
         >
           {label}
         </span>
       </div>
+
       <select
         id={id}
         name={name}
@@ -67,7 +73,9 @@ SelectListInputGroup.propTypes = {
   defaultClasses: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   defaultOption: PropTypes.string.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  disablePrepend: PropTypes.bool,
+  isSearchBar: PropTypes.bool
 };
 
 export default SelectListInputGroup;
