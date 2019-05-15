@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import AdCard from "./AdCard";
 import { filterAds } from "../../actions/adActions";
+import PropTypes from "prop-types";
 
 class JobCategory extends Component {
   constructor(props) {
@@ -15,15 +16,15 @@ class JobCategory extends Component {
       ads: [],
       numOfAds: ""
     };
+
+    this.performSearchBarFiltering = this.performSearchBarFiltering.bind(this);
   }
 
   performSearchBarFiltering(query) {
-    console.log("izvelo me");
-    console.log(query);
+    this.props.filterAds(query, this.props.history);
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
-    console.log("component will receive props called");
     if (nextProps.category) {
       this.setState({ category: nextProps.category });
     }
@@ -78,6 +79,13 @@ class JobCategory extends Component {
     );
   }
 }
+
+// JobCategory.propTypes = {
+//   auth: PropTypes.object.isRequired,
+//   errors: PropTypes.object.isRequired,
+//   ads: PropTypes.object.isRequired,
+//   filterAds: PropTypes.func
+// };
 
 const mapStateToProps = state => ({
   auth: state.auth,

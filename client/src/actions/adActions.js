@@ -3,7 +3,13 @@ import {
   GET_ERRORS,
   CREATE_NEW_AD,
   FILTER_ADS,
-  CHANGE_CATEGORY
+  CHANGE_CATEGORY,
+  CHANGE_SORT,
+  CHANGE_REGION,
+  CHANGE_FREQUENCY,
+  CHANGE_CITY,
+  CHANGE_AMOUNT_TO,
+  CHANGE_AMOUNT_FROM
 } from "./types";
 
 export const createNewAd = (adData, history) => dispatch => {
@@ -26,17 +32,23 @@ export const createNewAd = (adData, history) => dispatch => {
     });
 };
 
-export const filterAds = (category, history) => dispatch => {
+export const filterAds = (queryObject, history) => dispatch => {
+  const queryString = require("query-string");
+
   axios
-    .get(`/oglasi?category=${category}`)
+    .get("/oglasi?" + queryString.stringify(queryObject))
     .then(res => {
-      localStorage.setItem("category", category);
+      console.log(queryObject);
+      localStorage.setItem("category", queryObject.category);
+      // for (const [key, value] of Object.entries(queryObject)) {
+      //   localStorage.setItem(key, value);
+      // }
       localStorage.setItem("ads", JSON.stringify(res.data));
 
-      dispatch(setCurrentCategory(category));
+      dispatch(setCurrentCategory(queryObject.category));
       dispatch(setCurrentAds(res.data));
 
-      history.push(`/oglasi?category=${category}`);
+      history.push(`/oglasi?category=${queryObject.category}`);
     })
     .catch(err => {
       dispatch({
@@ -44,8 +56,6 @@ export const filterAds = (category, history) => dispatch => {
         payload: err.response.data
       });
     });
-  // console.log("kategorija je ");
-  // console.log(category);
 };
 
 export const setCurrentCategory = category => {

@@ -30,9 +30,7 @@ class Landing extends Component {
   }
 
   onCategoryCardClick(cardCategory) {
-    // console.log(cardCategory);
-    // this.setState({ category: cardCategory });
-    this.props.filterAds(cardCategory, this.props.history);
+    this.props.filterAds({ category: cardCategory }, this.props.history);
   }
 
   render() {

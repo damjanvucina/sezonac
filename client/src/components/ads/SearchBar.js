@@ -60,7 +60,14 @@ class SearchBar extends Component {
       sort: this.state.sort
     };
 
-    this.state.performSearchBarFiltering(searchOptions);
+    const filteredSearchOptions = {};
+    Object.keys(searchOptions).forEach(key => {
+      if (searchOptions[key] !== "DEFAULT" && !isEmpty(searchOptions[key])) {
+        filteredSearchOptions[key] = searchOptions[key];
+      }
+    });
+
+    this.state.performSearchBarFiltering(filteredSearchOptions);
   }
 
   regionSelected(e) {
@@ -78,7 +85,8 @@ class SearchBar extends Component {
         value !== "DEFAULT" &&
         !isEmpty(value) &&
         key !== "regionOptions" &&
-        key !== "cityOptions"
+        key !== "cityOptions" &&
+        key !== "performSearchBarFiltering"
       ) {
         filterCounter++;
       }
