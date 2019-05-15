@@ -17,6 +17,11 @@ class JobCategory extends Component {
     };
   }
 
+  performSearchBarFiltering(query) {
+    console.log("izvelo me");
+    console.log(query);
+  }
+
   componentWillReceiveProps(nextProps, nextContext) {
     console.log("component will receive props called");
     if (nextProps.category) {
@@ -55,7 +60,9 @@ class JobCategory extends Component {
         </div>
 
         <div className="row">
-          <SearchBar filterAdsFr={filterAds} />
+          <SearchBar
+            performSearchBarFiltering={this.performSearchBarFiltering}
+          />
 
           <div className="col-md-8 order-md-1">
             <h4 className="d-flex justify-content-between align-items-center mb-3">

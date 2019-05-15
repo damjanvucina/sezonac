@@ -29,7 +29,7 @@ class SearchBar extends Component {
       cityOptions: [],
       errors: {},
       sort: "",
-      filterAdsFr: this.props.filterAdsFr
+      performSearchBarFiltering: this.props.performSearchBarFiltering
     };
 
     this.onChange = this.onChange.bind(this);
@@ -60,10 +60,7 @@ class SearchBar extends Component {
       sort: this.state.sort
     };
 
-    // console.log(searchOptions);
-    // this.countFilters();
-
-    this.state.filterAdsFr();
+    this.state.performSearchBarFiltering(searchOptions);
   }
 
   regionSelected(e) {
@@ -75,20 +72,17 @@ class SearchBar extends Component {
 
   countFilters() {
     let filterCounter = 0;
-    // console.log("----------------");
+
     for (const [key, value] of Object.entries(this.state)) {
-      // console.log(key + ": " + value);
       if (
         value !== "DEFAULT" &&
         !isEmpty(value) &&
         key !== "regionOptions" &&
         key !== "cityOptions"
       ) {
-        // console.log(key + ": " + value);
         filterCounter++;
       }
     }
-    // console.log("----------------");
     return filterCounter;
   }
 
@@ -224,7 +218,7 @@ SearchBar.propTypes = {
   ads: PropTypes.object.isRequired,
   cityOptions: PropTypes.array,
   category: PropTypes.string,
-  filterAdsFr: PropTypes.func
+  performSearchBarFiltering: PropTypes.func
 };
 
 const mapStateToProps = state => ({

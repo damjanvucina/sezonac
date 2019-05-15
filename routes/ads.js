@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
     conditions[key] = value;
   }
 
-  if (conditions.kategorije === "sve") {
-    delete conditions.kategorije;
+  if (conditions.category === "sve") {
+    delete conditions.category;
   }
 
   if (conditions.sort) {
