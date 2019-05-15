@@ -8,7 +8,7 @@ import {
   CHANGE_SORT
 } from "../actions/types";
 
-export const searchBarOptionToActionName = option => {
+export const searchBarOptionToActionType = option => {
   switch (option) {
     case "amountFrom":
       return CHANGE_AMOUNT_FROM;

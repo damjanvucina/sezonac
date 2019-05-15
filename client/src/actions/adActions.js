@@ -12,6 +12,11 @@ import {
   CHANGE_AMOUNT_FROM
 } from "./types";
 
+import {
+  searchBarOptionToActionType,
+  searchBarOptions
+} from "../utils/searchBarOptionToActionType";
+
 export const createNewAd = (adData, history) => dispatch => {
   axios
     .post("/oglasi/novi", adData)
@@ -38,17 +43,22 @@ export const filterAds = (queryObject, history) => dispatch => {
   axios
     .get("/oglasi?" + queryString.stringify(queryObject))
     .then(res => {
-      console.log(queryObject);
-      localStorage.setItem("category", queryObject.category);
-      // for (const [key, value] of Object.entries(queryObject)) {
-      //   localStorage.setItem(key, value);
-      // }
-      localStorage.setItem("ads", JSON.stringify(res.data));
+      // console.log(queryObject);
+      // localStorage.setItem("category", queryObject.category);
 
-      dispatch(setCurrentCategory(queryObject.category));
+      for (const [key, value] of Object.entries(queryObject)) {
+        localStorage.setItem(key, value);
+
+        if (searchBarOptions.includes(key)) {
+          dispatch(setSearchBarOption(searchBarOptionToActionType(key), value));
+        }
+      }
+
+      localStorage.setItem("ads", JSON.stringify(res.data));
       dispatch(setCurrentAds(res.data));
 
-      history.push(`/oglasi?category=${queryObject.category}`);
+      // history.push(`/oglasi?category=${queryObject.category}`);
+      history.push("/oglasi");
     })
     .catch(err => {
       dispatch({
@@ -58,10 +68,10 @@ export const filterAds = (queryObject, history) => dispatch => {
     });
 };
 
-export const setCurrentCategory = category => {
+export const setSearchBarOption = (type, payload) => {
   return {
-    type: CHANGE_CATEGORY,
-    payload: category
+    type,
+    payload
   };
 };
 

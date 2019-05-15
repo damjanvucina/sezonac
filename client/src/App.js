@@ -14,7 +14,11 @@ import PublishAd from "./components/ads/PublishAd";
 import JobCategory from "./components/ads/JobCategory";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import { setCurrentAds, setCurrentCategory } from "./actions/adActions";
+import { setCurrentAds, setSearchBarOption } from "./actions/adActions";
+import {
+  searchBarOptionToActionType,
+  searchBarOptions
+} from "./utils/searchBarOptionToActionType";
 
 if (localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
@@ -30,8 +34,14 @@ if (localStorage.jwtToken) {
 }
 
 if (localStorage.category) {
-  store.dispatch(setCurrentCategory(localStorage.category));
+  store.dispatch(setSearchBarOption("CHANGE_CATEGORY", localStorage.category));
 }
+
+// for (let option of searchBarOptions) {
+//   if (localStorage[option]) {
+//     console.log("sadrzi: " + option);
+//   }
+// }
 
 if (localStorage.ads) {
   store.dispatch(setCurrentAds(JSON.parse(localStorage.ads)));

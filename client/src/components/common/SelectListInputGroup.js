@@ -15,7 +15,8 @@ const SelectListInputGroup = ({
   defaultOption,
   selectedOption,
   disabled,
-  isSearchBar
+  isSearchBar,
+  isCategoryGroup
 }) => {
   return (
     <div className="input-group">
@@ -48,7 +49,10 @@ const SelectListInputGroup = ({
         required
         autoFocus
       >
-        <option value="DEFAULT">{defaultOption}</option>
+        {/*<option value="DEFAULT">{defaultOption}</option>*/}
+        <option value={isCategoryGroup ? "Sve kategorije" : "DEFAULT"}>
+          {defaultOption}
+        </option>
         {options
           ? options.map(optionItem => (
               <option key={optionItem}>{optionItem}</option>

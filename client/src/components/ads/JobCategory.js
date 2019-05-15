@@ -26,6 +26,7 @@ class JobCategory extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
     if (nextProps.category) {
+      console.log("kategorija prominjena");
       this.setState({ category: nextProps.category });
     }
 

@@ -86,8 +86,10 @@ class SearchBar extends Component {
         !isEmpty(value) &&
         key !== "regionOptions" &&
         key !== "cityOptions" &&
-        key !== "performSearchBarFiltering"
+        key !== "performSearchBarFiltering" &&
+        value !== "Sve kategorije"
       ) {
+        // console.log("prosa je " + key + " " + value);
         filterCounter++;
       }
     }
@@ -115,10 +117,11 @@ class SearchBar extends Component {
           onChange={this.onChange}
           label="Kategorija"
           defaultClasses="form-control rounded-0"
-          options={[...getDefaultCategoryOptions(), "Sve kategorije"]}
-          defaultOption="Odaberite kategoriju"
+          options={[...getDefaultCategoryOptions()]}
+          defaultOption="Sve kategorije"
           selectedOption={this.props.ads.category}
           isSearchBar={true}
+          isCategoryGroup={true}
         />
 
         <SelectListInputGroup
@@ -131,7 +134,7 @@ class SearchBar extends Component {
           label="Županija"
           defaultClasses="form-control rounded-0 rounded-top"
           options={regionOptions}
-          defaultOption="Odaberite županiju"
+          defaultOption="Sve županije"
           isSearchBar={true}
         />
 
@@ -146,7 +149,7 @@ class SearchBar extends Component {
           label="Mjesto"
           defaultClasses="form-control rounded-0"
           options={cityOptions}
-          defaultOption="Odaberite mjesto"
+          defaultOption="Sva mjesta"
           isSearchBar={true}
         />
 
@@ -160,7 +163,7 @@ class SearchBar extends Component {
           label="Plaćanje"
           defaultClasses="form-control rounded-0"
           options={getDefaultSalaryFrequencyOptions()}
-          defaultOption="Oblik plaćanja"
+          defaultOption="Svi oblici plaćanja"
           isSearchBar={true}
         />
 
@@ -204,7 +207,7 @@ class SearchBar extends Component {
           label="Sortiraj"
           defaultClasses="form-control rounded-0"
           options={getDefaultSortOptions()}
-          defaultOption="Odaberi"
+          defaultOption="Od najsvježijih"
           isSearchBar={true}
         />
 

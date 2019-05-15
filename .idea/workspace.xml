@@ -8,13 +8,15 @@
       <change beforePath="$PROJECT_DIR$/../mern/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mern/validation/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/validation/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/adActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/adActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ads/JobCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ads/JobCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ads/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ads/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/layout/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/adReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/adReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/searchBarOptionToActionName.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/searchBarOptionToActionType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/ads.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,23 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/layout/Landing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-264">
-              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="462">
+              <caret line="35" selection-start-line="35" selection-end-line="37" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -52,39 +42,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/utils/isEmpty.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/ads/SearchBar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2473">
-              <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/common/InputGroup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-506">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/actions/adActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+            <state relative-caret-position="440">
+              <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -93,31 +54,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/reducers/adReducer.js">
+        <entry file="file://$PROJECT_DIR$/client/src/utils/searchBarOptionToActionType.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#193#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/utils/searchBarOptionToActionName.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="968">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="220">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="e#0#162#0" expanded="true" />
               </folding>
@@ -136,7 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console</find>
       <find>opis</find>
       <find>Traženo</find>
       <find>iznos</find>
@@ -166,6 +105,7 @@
       <find>am</find>
       <find>amountFrom</find>
       <find>amountFro</find>
+      <find>searc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,7 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/utils/setAuthToken.js" />
         <option value="$PROJECT_DIR$/client/src/utils/isEmpty.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/authReducer.js" />
         <option value="$PROJECT_DIR$/routes/login.js" />
@@ -198,7 +137,6 @@
         <option value="$PROJECT_DIR$/client/src/components/layout/Navbar.js" />
         <option value="$PROJECT_DIR$/client/src/components/layout/a.js" />
         <option value="$PROJECT_DIR$/client/src/components/layout/JobCard.js" />
-        <option value="$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js" />
         <option value="$PROJECT_DIR$/client/src/components/ads/a.html" />
         <option value="$PROJECT_DIR$/client/src/components/common/RangeInputGroup.js" />
         <option value="$PROJECT_DIR$/client/src/components/ads/SearchBar.css" />
@@ -212,19 +150,21 @@
         <option value="$PROJECT_DIR$/client/src/components/ads/JobCategory.css" />
         <option value="$PROJECT_DIR$/client/src/components/ads/AdCard.css" />
         <option value="$PROJECT_DIR$/client/src/components/authorization/Login.js" />
-        <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/models/Ad.js" />
         <option value="$PROJECT_DIR$/client/src/components/ads/AdCard.js" />
-        <option value="$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js" />
-        <option value="$PROJECT_DIR$/routes/ads.js" />
-        <option value="$PROJECT_DIR$/client/src/components/layout/Landing.js" />
-        <option value="$PROJECT_DIR$/client/src/components/ads/JobCategory.js" />
         <option value="$PROJECT_DIR$/validation/ad.js" />
         <option value="$PROJECT_DIR$/client/src/actions/types.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/adReducer.js" />
         <option value="$PROJECT_DIR$/client/src/utils/searchBarOptionToActionName.js" />
-        <option value="$PROJECT_DIR$/client/src/components/ads/SearchBar.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/searchBarOptionToActionType.js" />
         <option value="$PROJECT_DIR$/client/src/actions/adActions.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js" />
+        <option value="$PROJECT_DIR$/client/src/components/layout/Landing.js" />
+        <option value="$PROJECT_DIR$/routes/ads.js" />
+        <option value="$PROJECT_DIR$/client/src/components/ads/JobCategory.js" />
+        <option value="$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js" />
+        <option value="$PROJECT_DIR$/client/src/components/ads/SearchBar.js" />
+        <option value="$PROJECT_DIR$/client/src/App.js" />
       </list>
     </option>
   </component>
@@ -347,22 +287,22 @@
       <workItem from="1556383005723" duration="119323000" />
       <workItem from="1557163361224" duration="23112000" />
       <workItem from="1557761586013" duration="37863000" />
-      <workItem from="1557927304783" duration="11287000" />
+      <workItem from="1557927304783" duration="16632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260056000" />
+    <option name="totallyTimeSpent" value="265401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14540648" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.14540648" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49834764" visible="true" weight="0.25714287" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49834764" weight="0.25714287" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50165236" side_tool="true" weight="0.25714287" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32919255" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
@@ -472,13 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -571,16 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/layout/CategoryCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/reducers/errorsReducer.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -645,16 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/ads/PublishAd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
@@ -665,37 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/ads/JobCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/validation/ad.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="47" selection-start-line="47" selection-end-line="50" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/ads.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/layout/Landing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,36 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/ads/SearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2473">
-          <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/utils/searchBarOptionToActionName.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#0#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/reducers/adReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
@@ -766,10 +622,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/adActions.js">
+    <entry file="file://$PROJECT_DIR$/client/src/utils/getDefaultCategoryOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ads.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/layout/Landing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/layout/CategoryCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/ads/JobCategory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/ads/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/common/SelectListInputGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/searchBarOptionToActionType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/adActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="35" selection-start-line="35" selection-end-line="37" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

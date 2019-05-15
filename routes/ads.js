@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     conditions[key] = value;
   }
 
-  if (conditions.category === "sve") {
+  if (conditions.category === "Sve kategorije") {
     delete conditions.category;
   }
 
@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
   }
 
   let query = Ad.find(conditions);
-  query = sort !== undefined ? query.sort(sort) : query.sort("createdat");
+  query = sort !== undefined ? query.sort(sort) : query.sort("-createdat");
 
   query.exec((err, docs) => {
     res.json(docs);

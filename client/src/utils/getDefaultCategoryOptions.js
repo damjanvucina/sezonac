@@ -1,4 +1,5 @@
 const getDefaultCategoryOptions = () => [
+  // "Sve kategorije",
   "Administracija",
   "Anketiranje",
   "Čišćenje",
