@@ -7,9 +7,7 @@
       <change beforePath="$PROJECT_DIR$/../mern/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/routes/api/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mern/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mern/validation/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/validation/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -296,12 +294,12 @@
       <workItem from="1556383005723" duration="119323000" />
       <workItem from="1557163361224" duration="23112000" />
       <workItem from="1557761586013" duration="37863000" />
-      <workItem from="1557927304783" duration="21368000" />
+      <workItem from="1557927304783" duration="22049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270137000" />
+    <option name="totallyTimeSpent" value="270818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="6" />
