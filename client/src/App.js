@@ -39,7 +39,12 @@ if (localStorage.category) {
 
 // for (let option of searchBarOptions) {
 //   if (localStorage[option]) {
-//     console.log("sadrzi: " + option);
+//     store.dispatch(
+//       setSearchBarOption(
+//         searchBarOptionToActionType(option),
+//         localStorage[option]
+//       )
+//     );
 //   }
 // }
 
