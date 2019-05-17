@@ -1,16 +1,5 @@
 import axios from "axios";
-import {
-  GET_ERRORS,
-  CREATE_NEW_AD,
-  FILTER_ADS,
-  CHANGE_CATEGORY,
-  CHANGE_SORT,
-  CHANGE_REGION,
-  CHANGE_FREQUENCY,
-  CHANGE_CITY,
-  CHANGE_AMOUNT_TO,
-  CHANGE_AMOUNT_FROM
-} from "./types";
+import { GET_ERRORS, CREATE_NEW_AD, FILTER_ADS } from "./types";
 
 import {
   searchBarOptions,
@@ -44,17 +33,6 @@ export const filterAds = (queryObject, history) => dispatch => {
   axios
     .get("/oglasi?" + queryString.stringify(queryObject))
     .then(res => {
-      // console.log(queryObject);
-      // localStorage.setItem("category", queryObject.category);
-
-      // for (const [key, value] of Object.entries(queryObject)) {
-      //   localStorage.setItem(key, value);
-      //
-      //   if (searchBarOptions.includes(key)) {
-      //     dispatch(setSearchBarOption(searchBarOptionToActionType(key), value));
-      //   }
-      // }
-
       let localStorageValue;
       for (const optionName of searchBarOptions) {
         if (Object.keys(queryObject).includes(optionName)) {
@@ -74,13 +52,12 @@ export const filterAds = (queryObject, history) => dispatch => {
           );
           localStorageValue = searchBarOptionDefaultValue(optionName);
         }
-        localStorage.setItem(optionName, localStorageValue);
+        localStorage.setItem(optionName, JSON.stringify(localStorageValue));
       }
 
       localStorage.setItem("ads", JSON.stringify(res.data));
       dispatch(setCurrentAds(res.data));
 
-      // history.push(`/oglasi?category=${queryObject.category}`);
       history.push("/oglasi");
     })
     .catch(err => {

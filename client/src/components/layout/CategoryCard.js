@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { filterAds } from "../../actions/adActions";
 
 class CategoryCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { imgSrc, title, category, onCategoryCardClick } = this.props;
+    const { imgSrc, title, onCategoryCardClick } = this.props;
 
     return (
       <div className="card mb-4 shadow-sm">

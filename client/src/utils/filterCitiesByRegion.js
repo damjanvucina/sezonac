@@ -87,6 +87,9 @@ const filterCitiesByRegion = region => {
     case "Grad Zagreb":
       cities = citiesByRegion.Grad_Zagreb;
       break;
+
+    default:
+      break;
   }
 
   return cities;

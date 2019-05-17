@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import AdCard from "./AdCard";
 import { filterAds } from "../../actions/adActions";
-import PropTypes from "prop-types";
 
 class JobCategory extends Component {
   constructor(props) {

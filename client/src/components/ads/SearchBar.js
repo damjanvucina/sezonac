@@ -70,6 +70,14 @@ class SearchBar extends Component {
     this.state.performSearchBarFiltering(filteredSearchOptions);
   }
 
+  componentWillMount() {
+    if (this.state.region !== "") {
+      this.setState({
+        cityOptions: filterCitiesByRegion(this.state.region)
+      });
+    }
+  }
+
   regionSelected(e) {
     this.onChange(e);
 
@@ -89,7 +97,6 @@ class SearchBar extends Component {
         key !== "performSearchBarFiltering" &&
         value !== "Sve kategorije"
       ) {
-        // console.log("prosa je " + key + " " + value);
         filterCounter++;
       }
     }
@@ -97,7 +104,7 @@ class SearchBar extends Component {
   }
 
   render() {
-    const { regionOptions, cityOptions, errors, category } = this.state;
+    const { regionOptions, cityOptions, errors } = this.state;
 
     return (
       <div className="col-md-4 order-md-2 mb-4">
@@ -155,6 +162,9 @@ class SearchBar extends Component {
           options={cityOptions}
           selectedOption={this.props.ads.city}
           defaultOption="Sva mjesta"
+          // defaultOption={
+          //   this.props.ads.city === "" ? "Sva mjesta" : this.props.ads.city
+          // }
           isSearchBar={true}
         />
 

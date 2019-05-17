@@ -30,6 +30,9 @@ export const searchBarOptionToActionType = option => {
 
     case "sort":
       return CHANGE_SORT;
+
+    default:
+      break;
   }
 };
 
@@ -51,9 +54,6 @@ export const searchBarOptionDefaultValue = option => {
     case "amountTo":
       return "";
 
-    // case "category":
-    //   return "SREDI OVO";
-
     case "city":
       return "DEFAULT";
 
@@ -65,5 +65,8 @@ export const searchBarOptionDefaultValue = option => {
 
     case "sort":
       return "";
+
+    default:
+      break;
   }
 };
