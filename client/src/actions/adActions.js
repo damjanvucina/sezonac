@@ -13,8 +13,9 @@ import {
 } from "./types";
 
 import {
+  searchBarOptions,
   searchBarOptionToActionType,
-  searchBarOptions
+  searchBarOptionDefaultValue
 } from "../utils/searchBarOptionToActionType";
 
 export const createNewAd = (adData, history) => dispatch => {
@@ -46,12 +47,34 @@ export const filterAds = (queryObject, history) => dispatch => {
       // console.log(queryObject);
       // localStorage.setItem("category", queryObject.category);
 
-      for (const [key, value] of Object.entries(queryObject)) {
-        localStorage.setItem(key, value);
+      // for (const [key, value] of Object.entries(queryObject)) {
+      //   localStorage.setItem(key, value);
+      //
+      //   if (searchBarOptions.includes(key)) {
+      //     dispatch(setSearchBarOption(searchBarOptionToActionType(key), value));
+      //   }
+      // }
 
-        if (searchBarOptions.includes(key)) {
-          dispatch(setSearchBarOption(searchBarOptionToActionType(key), value));
+      let localStorageValue;
+      for (const optionName of searchBarOptions) {
+        if (Object.keys(queryObject).includes(optionName)) {
+          dispatch(
+            setSearchBarOption(
+              searchBarOptionToActionType(optionName),
+              queryObject[optionName]
+            )
+          );
+          localStorageValue = queryObject[optionName];
+        } else {
+          dispatch(
+            setSearchBarOption(
+              searchBarOptionToActionType(optionName),
+              searchBarOptionDefaultValue(optionName)
+            )
+          );
+          localStorageValue = searchBarOptionDefaultValue(optionName);
         }
+        localStorage.setItem(optionName, localStorageValue);
       }
 
       localStorage.setItem("ads", JSON.stringify(res.data));

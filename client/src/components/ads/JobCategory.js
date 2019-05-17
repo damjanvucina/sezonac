@@ -26,7 +26,7 @@ class JobCategory extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
     if (nextProps.category) {
-      console.log("kategorija prominjena");
+      console.log("1");
       this.setState({ category: nextProps.category });
     }
 
@@ -37,6 +37,7 @@ class JobCategory extends Component {
 
   render() {
     const { ads, category } = this.props.ads;
+    // console.log("2");
 
     const adsCards = ads.map(ad => (
       <AdCard

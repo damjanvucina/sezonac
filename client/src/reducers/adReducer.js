@@ -13,7 +13,13 @@ import {
 const initialState = {
   ads: [],
   ad: {},
-  category: ""
+  category: "",
+  region: "",
+  city: "",
+  frequency: "",
+  amountFrom: "",
+  amountTo: "",
+  sort: ""
 };
 
 export default function(state = initialState, action) {

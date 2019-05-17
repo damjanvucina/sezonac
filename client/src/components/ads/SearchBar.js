@@ -16,19 +16,18 @@ class SearchBar extends Component {
     super(props);
 
     this.state = {
-      region: "DEFAULT",
-      city: "DEFAULT",
-      // category: "DEFAULT",
+      region: this.props.ads.region,
+      city: this.props.ads.city,
       category: this.props.ads.category,
-      frequency: "DEFAULT",
-      amountFrom: "",
-      amountTo: "",
+      frequency: this.props.ads.frequency,
+      amountFrom: this.props.ads.amountFrom,
+      amountTo: this.props.ads.amountTo,
       jobstartdate: "",
       adexpirationdate: "",
       regionOptions: regions,
       cityOptions: [],
       errors: {},
-      sort: "",
+      sort: this.props.ads.sort,
       performSearchBarFiltering: this.props.performSearchBarFiltering
     };
 
@@ -39,16 +38,17 @@ class SearchBar extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
 
-    // console.log(e.target.name + " " + e.target.value);
     if (e.target.name === "region" && e.target.value === "DEFAULT") {
       this.setState({ city: "DEFAULT" });
+    }
+    if (e.target.name === "frequency" && e.target.value === "DEFAULT") {
+      this.setState({ amountFrom: "" });
+      this.setState({ amountTo: "" });
     }
   }
 
   onSubmit(e) {
     e.preventDefault();
-
-    // console.log("kat je " + this.state.region);
 
     const searchOptions = {
       region: this.state.region,
@@ -134,6 +134,7 @@ class SearchBar extends Component {
           label="Županija"
           defaultClasses="form-control rounded-0 rounded-top"
           options={regionOptions}
+          selectedOption={this.props.ads.region}
           defaultOption="Sve županije"
           isSearchBar={true}
         />
@@ -145,10 +146,14 @@ class SearchBar extends Component {
           placeholder="Mjesto"
           value={this.state.city}
           onChange={this.onChange}
-          disabled={cityOptions === undefined || cityOptions.length === 0}
+          disabled={
+            (cityOptions === undefined || cityOptions.length === 0) &&
+            this.state.region === "DEFAULT"
+          }
           label="Mjesto"
           defaultClasses="form-control rounded-0"
           options={cityOptions}
+          selectedOption={this.props.ads.city}
           defaultOption="Sva mjesta"
           isSearchBar={true}
         />
@@ -163,6 +168,7 @@ class SearchBar extends Component {
           label="Plaćanje"
           defaultClasses="form-control rounded-0"
           options={getDefaultSalaryFrequencyOptions()}
+          selectedOption={this.props.ads.frequency}
           defaultOption="Svi oblici plaćanja"
           isSearchBar={true}
         />

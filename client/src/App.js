@@ -33,20 +33,28 @@ if (localStorage.jwtToken) {
   }
 }
 
-if (localStorage.category) {
-  store.dispatch(setSearchBarOption("CHANGE_CATEGORY", localStorage.category));
-}
-
-// for (let option of searchBarOptions) {
-//   if (localStorage[option]) {
-//     store.dispatch(
-//       setSearchBarOption(
-//         searchBarOptionToActionType(option),
-//         localStorage[option]
-//       )
-//     );
-//   }
+// if (localStorage.category) {
+//   store.dispatch(
+//     setSearchBarOption(
+//       searchBarOptionToActionType("category"),
+//       localStorage.category
+//     )
+//   );
 // }
+
+for (let option of searchBarOptions) {
+  if (localStorage[option]) {
+    console.log(
+      "nakon reloada stavi " + option + " na " + localStorage[option]
+    );
+    store.dispatch(
+      setSearchBarOption(
+        searchBarOptionToActionType(option),
+        localStorage[option]
+      )
+    );
+  }
+}
 
 if (localStorage.ads) {
   store.dispatch(setCurrentAds(JSON.parse(localStorage.ads)));

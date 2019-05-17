@@ -42,3 +42,28 @@ export const searchBarOptions = [
   "region",
   "sort"
 ];
+
+export const searchBarOptionDefaultValue = option => {
+  switch (option) {
+    case "amountFrom":
+      return "";
+
+    case "amountTo":
+      return "";
+
+    // case "category":
+    //   return "SREDI OVO";
+
+    case "city":
+      return "DEFAULT";
+
+    case "frequency":
+      return "DEFAULT";
+
+    case "region":
+      return "DEFAULT";
+
+    case "sort":
+      return "";
+  }
+};

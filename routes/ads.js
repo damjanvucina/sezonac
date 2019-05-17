@@ -22,7 +22,36 @@ router.get("/", (req, res) => {
     delete conditions.sort;
   }
 
+  if (conditions["frequency"]) {
+    conditions["salary.frequency"] = conditions["frequency"];
+    delete conditions["frequency"];
+  }
+
+  if (conditions["amount"]) {
+    conditions["salary.amount"] = conditions["amount"];
+    delete conditions["amount"];
+  }
+
+  // console.log("conditions");
+  // console.log(conditions);
+  let gte;
+  let lte;
+  if (conditions["amountFrom"]) {
+    gte = conditions["amountFrom"];
+    delete conditions["amountFrom"];
+  }
+  if (conditions["amountTo"]) {
+    lte = conditions["amountTo"];
+    delete conditions["amountTo"];
+  }
+
   let query = Ad.find(conditions);
+  if (gte) {
+    query = query.gte("salary.amount", gte);
+  }
+  if (lte) {
+    query = query.lte("salary.amount", lte);
+  }
   query = sort !== undefined ? query.sort(sort) : query.sort("-createdat");
 
   query.exec((err, docs) => {
