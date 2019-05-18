@@ -7,7 +7,6 @@ export const Zagrebacka = [
   "Sveti Ivan Zelina",
   "Velika Gorica",
   "Vrbovec",
-  "Zagreb",
   "Zaprešić"
 ];
 

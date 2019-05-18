@@ -16,15 +16,14 @@ class CategoryCard extends Component {
           <ul className="list-unstyled mt-3 mb-4">
             <li>
               Oglasa u posljednjem tjednu:{" "}
-              <span className="badge badge-dark">17</span>
+              <span className="badge badge-dark">1</span>
             </li>
             <li>
-              Ukupno oglasa: <span className="badge badge-dark">143</span>
+              Ukupno oglasa: <span className="badge badge-dark">14</span>
             </li>
             <li>
               Prosječna satnica: <span className="badge badge-dark">25 kn</span>
             </li>
-
             <br />
             <p className="card-text">
               <small className="text-muted">

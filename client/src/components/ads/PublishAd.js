@@ -130,7 +130,7 @@ class PublishAd extends Component {
             placeholder="Mjesto rada"
             value={this.state.city}
             onChange={this.onChange}
-            disabled={cityOptions.length === 0}
+            disabled={cityOptions === undefined || cityOptions.length === 0}
             label="Mjesto rada"
             defaultClasses="form-control rounded-0"
             options={cityOptions}
