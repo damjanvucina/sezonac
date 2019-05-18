@@ -3,8 +3,8 @@ Web app for searching seasonal jobs.
 
 ## Features
 
-* Companies can easily register and publish seasonal jobs ads
-* Anyone can search job advertisments using powerful filtering system
+* Register and publish seasonal jobs ads
+* Search job advertisments using powerful filtering system
 
 ## Technology of choice
 
