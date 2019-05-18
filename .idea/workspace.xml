@@ -7,9 +7,7 @@
       <change beforePath="$PROJECT_DIR$/../mern/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/routes/api/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mern/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mern/validation/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mern/validation/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ads.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ads.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,7 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>appendix</find>
       <find>admi</find>
       <find>jobc</find>
       <find>jo</find>
@@ -90,6 +87,7 @@
       <find>ljepot</find>
       <find>navi</find>
       <find>filter</find>
+      <find>consol</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -266,12 +264,12 @@
       <workItem from="1558107675378" duration="10023000" />
       <workItem from="1558190776322" duration="18490000" />
       <workItem from="1558213186156" duration="1640000" />
-      <workItem from="1558221016879" duration="647000" />
+      <workItem from="1558221016879" duration="927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321997000" />
+    <option name="totallyTimeSpent" value="322277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
