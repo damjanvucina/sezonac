@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CategoryCard.css";
 
 class CategoryCard extends Component {
   render() {
@@ -6,7 +7,10 @@ class CategoryCard extends Component {
 
     return (
       <div className="card mb-4 shadow-sm">
-        <img src={imgSrc} className="card-img-top" alt="..." />
+        <div className="img-hover">
+          <img src={imgSrc} alt="" className="card-img-top img-responsive" />
+        </div>
+
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <ul className="list-unstyled mt-3 mb-4">

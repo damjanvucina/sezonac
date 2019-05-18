@@ -109,8 +109,8 @@ class SearchBar extends Component {
     return (
       <div className="col-md-4 order-md-2 mb-4">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
-          <span className="text-muted">Filtri</span>
-          <span className="badge badge-secondary badge-pill">
+          <span className="text-dark">Filtri</span>
+          <span className="badge badge-dark badge-pill">
             {this.countFilters()}
           </span>
         </h4>
@@ -162,9 +162,6 @@ class SearchBar extends Component {
           options={cityOptions}
           selectedOption={this.props.ads.city}
           defaultOption="Sva mjesta"
-          // defaultOption={
-          //   this.props.ads.city === "" ? "Sva mjesta" : this.props.ads.city
-          // }
           isSearchBar={true}
         />
 

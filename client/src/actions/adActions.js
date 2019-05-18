@@ -11,8 +11,6 @@ export const createNewAd = (adData, history) => dispatch => {
   axios
     .post("/oglasi/novi", adData)
     .then(res => {
-      console.log("oglas je");
-      console.log(res.data);
       dispatch({
         type: CREATE_NEW_AD,
         payload: res.data

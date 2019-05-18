@@ -1,5 +1,6 @@
 const Validator = require("validator");
 const isEmpty = require("./is-empty");
+const moment = require("moment");
 
 module.exports = function validateAdInput(data) {
   const errors = {};
@@ -38,14 +39,14 @@ module.exports = function validateAdInput(data) {
     errors.amount = "Potrebno je unijeti iznos plaćanja.";
   }
 
-  if (!Validator.isLength(data.description, { min: 1, max: 100 })) {
-    errors.description = "Opis posla mora imati između 1 i 100 znakova.";
+  if (!Validator.isLength(data.description, { min: 1, max: 200 })) {
+    errors.description = "Opis posla mora imati između 1 i 200 znakova.";
   }
   if (isEmpty(data.description)) {
     errors.description = "Potrebno je unijeti opis posla.";
   }
 
-  if (!Validator.isAfter(data.jobstartdate)) {
+  if (data.jobstartdate && !Validator.isAfter(data.jobstartdate)) {
     errors.jobstartdate =
       "Početak obavljanja posla mora biti nakon današnjeg datuma.";
   }
@@ -54,9 +55,19 @@ module.exports = function validateAdInput(data) {
     errors.jobstartdate = "Potrebno je unijeti datum početka obavljanja posla.";
   }
 
-  if (!Validator.isAfter(data.adexpirationdate)) {
+  if (data.adexpirationdate && !Validator.isAfter(data.adexpirationdate)) {
     errors.adexpirationdate = "Istek oglasa mora biti nakon današnjeg datuma.";
   }
+
+  if (
+    data.adexpirationdate &&
+    data.jobstartdate &&
+    !Validator.isAfter(data.adexpirationdate, data.jobstartdate)
+  ) {
+    errors.adexpirationdate =
+      "Istek oglasa mora biti nakon početka obavljanja posla.";
+  }
+
   if (isEmpty(data.adexpirationdate)) {
     errors.adexpirationdate = "Potrebno je unijeti datum isteka oglasa.";
   }

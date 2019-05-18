@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "./Navbar.css";
+import navbarlogo from "../../img/navbarlogo.png";
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -28,7 +29,7 @@ class Navbar extends Component {
 
     const loggedLinks = (
       <Link
-        className="navbar-link p-2 text-dark"
+        className="navbar-link p-2 app-color"
         onClick={this.onLogoutClick.bind(this)}
         to={"/"}
       >
@@ -38,29 +39,35 @@ class Navbar extends Component {
 
     const guestLinks = (
       <span>
-        <Link className="navbar-link p-2 text-dark " to="/prijava">
+        <Link className="navbar-link p-2 app-color " to="/prijava">
           Prijava
         </Link>
-        <Link className="navbar-link p-2 text-dark" to="/registracija">
+        <Link className="navbar-link p-2 app-color" to="/registracija">
           Registracija
         </Link>
       </span>
     );
     return (
-      <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
         <h5 className="my-0 mr-md-auto font-weight-normal display-6">
           <Link className="navbar-link" to="/">
-            Sezonac
+            <img
+              src={navbarlogo}
+              style={{ width: "120px", margin: "auto", display: "block" }}
+              alt="Sezonac"
+            />
           </Link>
         </h5>
         {isAuthenticated ? (
-          <span className="pr-3 text-muted">{this.props.auth.user.name}</span>
+          <span className="pr-3 text-muted app-color">
+            {this.props.auth.user.name}
+          </span>
         ) : null}
 
         <nav className="my-2 my-md-0 mr-md-3">
           {isAuthenticated ? loggedLinks : guestLinks}
           <Link
-            className="navbar-link p-2 text-dark"
+            className="navbar-link p-2 app-color"
             onClick={this.onPublishAdClick.bind(this)}
             to={"/oglasi/novi"}
           >

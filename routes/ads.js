@@ -17,6 +17,8 @@ router.get("/", (req, res) => {
     delete conditions.category;
   }
 
+  console.log(conditions);
+
   if (conditions.sort) {
     sort = conditions.sort;
     delete conditions.sort;
@@ -32,8 +34,6 @@ router.get("/", (req, res) => {
     delete conditions["amount"];
   }
 
-  // console.log("conditions");
-  // console.log(conditions);
   let gte;
   let lte;
   if (conditions["amountFrom"]) {
@@ -52,9 +52,22 @@ router.get("/", (req, res) => {
   if (lte) {
     query = query.lte("salary.amount", lte);
   }
-  query = sort !== undefined ? query.sort(sort) : query.sort("-createdat");
+
+  let sortOption;
+  switch (sort) {
+    case "Od najmanje plaće":
+      sortOption = "salary.amount";
+      break;
+
+    case "Od najveće plaće":
+      sortOption = "-salary.amount";
+      break;
+  }
+  query =
+    sort !== undefined ? query.sort(sortOption) : query.sort("-createdat");
 
   query.exec((err, docs) => {
+    console.log(docs);
     res.json(docs);
   });
 });
@@ -69,6 +82,7 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateAdInput(req.body);
+
     if (!isValid) {
       return res.status(400).json(errors);
     }

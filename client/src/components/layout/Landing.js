@@ -30,7 +30,6 @@ class Landing extends Component {
   }
 
   onCategoryCardClick(cardCategory) {
-    console.log("kliknuto: " + cardCategory);
     this.props.filterAds({ category: cardCategory }, this.props.history);
   }
 
@@ -40,7 +39,7 @@ class Landing extends Component {
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
           <h1 className="display-4">Tražiš sezonski posao?</h1>
 
-          <p className="lead">
+          <p className="lead text-dark">
             Odaberi kategoriju i pretraži poslove koji ti najviše odgovaraju.
             Jednim klikom do zarade!
           </p>
@@ -128,7 +127,9 @@ class Landing extends Component {
               imgSrc={tourism}
               title="Turizam"
               category="Turizam"
-              onCategoryCardClick={e => this.onCategoryCardClick(e)}
+              onCategoryCardClick={e =>
+                this.onCategoryCardClick(e.target.value)
+              }
             />
           </div>
 

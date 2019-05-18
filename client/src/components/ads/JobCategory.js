@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./JobCategory.css";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import AdCard from "./AdCard";
 import { filterAds } from "../../actions/adActions";
+import { jobCategoryToImg } from "../../utils/jobCategoryToImgSrc";
 
 class JobCategory extends Component {
   constructor(props) {
@@ -36,7 +37,6 @@ class JobCategory extends Component {
 
   render() {
     const { ads, category } = this.props.ads;
-    // console.log("2");
 
     const adsCards = ads.map(ad => (
       <AdCard
@@ -56,27 +56,33 @@ class JobCategory extends Component {
       />
     ));
     return (
-      <div className="container">
-        <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h1 className="display-4 mb-4">{category}</h1>
+      <Fragment>
+        <div className="container-fluid no-padding">
+          <div className="row">{jobCategoryToImg(category)}</div>
         </div>
 
-        <div className="row">
-          <SearchBar
-            performSearchBarFiltering={this.performSearchBarFiltering}
-          />
+        <div className="container">
+          <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 className="display-4 mb-4">{category}</h1>
+          </div>
 
-          <div className="col-md-8 order-md-1">
-            <h4 className="d-flex justify-content-between align-items-center mb-3">
-              <span className="text-muted">&nbsp;&nbsp;&nbsp;Broj oglasa</span>
-              <span className="badge badge-secondary badge-pill">
-                {ads.length}
-              </span>
-            </h4>
-            <div className="card-deck mb-6">{adsCards}</div>
+          <div className="row">
+            <SearchBar
+              performSearchBarFiltering={this.performSearchBarFiltering}
+            />
+
+            <div className="col-md-8 order-md-1">
+              <h4 className="d-flex justify-content-between align-items-center mb-3">
+                <span className="text-dark">&nbsp;&nbsp;&nbsp;Broj oglasa</span>
+                <span className="badge badge-dark badge-pill">
+                  {ads.length}
+                </span>
+              </h4>
+              <div className="card-deck mb-6">{adsCards}</div>
+            </div>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
