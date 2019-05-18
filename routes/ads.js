@@ -17,8 +17,6 @@ router.get("/", (req, res) => {
     delete conditions.category;
   }
 
-  console.log(conditions);
-
   if (conditions.sort) {
     sort = conditions.sort;
     delete conditions.sort;
@@ -67,7 +65,6 @@ router.get("/", (req, res) => {
     sort !== undefined ? query.sort(sortOption) : query.sort("-createdat");
 
   query.exec((err, docs) => {
-    console.log(docs);
     res.json(docs);
   });
 });

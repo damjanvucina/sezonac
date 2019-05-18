@@ -1,10 +1,11 @@
 # Sezonac
+
 Web app for searching seasonal jobs.
 
 ## Features
 
-* Companies can easily register and publish seasonal jobs ads
-* Anyone can search job advertisments using powerful filtering system
+- Companies can easily register and publish seasonal jobs ads
+- Anyone can search job advertisments using powerful filtering system
 
 ## Technology of choice
 
@@ -16,11 +17,12 @@ Web app for searching seasonal jobs.
 ## App preview
 
 ![App video](https://github.com/damjanvucina/sezonac/blob/master/preview.gif)
+
 <p align="center"><em>How it works?</em></p>
 
 ## Author
 
-* [Damjan Vučina](https://github.com/damjanvucina)
+- [Damjan Vučina](https://github.com/damjanvucina)
 
 ## License
 
