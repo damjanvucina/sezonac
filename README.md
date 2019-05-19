@@ -34,7 +34,7 @@ You need to have [npm](https://www.npmjs.com/get-npm "Click here to install npm.
 Step | Command | Explanation
 --- | --- | ---
 0 |      | *Clone the project and extract it. In the config folder create "keys_dev.js" file. In that file paste the code given below this table.*
-1 |      | *Open teriman in the project root*
+1 |      | *Open terminal in the project root*
 2 | `npm install` | *Install server dependencies*
 3 | `cd client` | *Open "client" folder*
 4 | `npm install` | *Install client dependencies*
