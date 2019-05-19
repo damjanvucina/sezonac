@@ -7,7 +7,6 @@ Web app for searching seasonal jobs.
 - Companies can easily register and publish seasonal jobs ads
 - Anyone can search job advertisments using powerful filtering system
 
-
 ## Technology of choice
 
 | Side   | Technologies                  | Noteworthy libraries                       |
