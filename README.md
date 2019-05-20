@@ -30,15 +30,15 @@ You need to have [npm](https://www.npmjs.com/get-npm "Click here to install npm.
 
 ### Quick start
 
-Step | Command | Explanation
---- | --- | ---
-0 |      | *Clone the project, extract it and open terminal in project root*
-1 | `npm install` | *Install server dependencies*
-2 | `cd client` | *Open "client" folder*
-3 | `npm install` | *Install client dependencies*
-4 | `cd ..` | *Go back to the project's root folder*
-5 | `npm run dev` | *Run the server and the client simultaneously.*
-6 |      | *Paste "localhost:3000" in the URL. Client runs on port 3000, server on port 5000.*
+| Step | Command       | Explanation                                                                         |
+| ---- | ------------- | ----------------------------------------------------------------------------------- |
+| 0    |               | _Clone the project, extract it and open terminal in project root_                   |
+| 1    | `npm install` | _Install server dependencies_                                                       |
+| 2    | `cd client`   | _Open "client" folder_                                                              |
+| 3    | `npm install` | _Install client dependencies_                                                       |
+| 4    | `cd ..`       | _Go back to the project's root folder_                                              |
+| 5    | `npm run dev` | _Run the server and the client simultaneously._                                     |
+| 6    |               | _Paste "localhost:3000" in the URL. Client runs on port 3000, server on port 5000._ |
 
 ## Author
 
