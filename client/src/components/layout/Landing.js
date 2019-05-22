@@ -17,13 +17,15 @@ import other from "../../img/other.jpg";
 import misc from "../../img/misc.jpg";
 
 import { filterAds } from "../../actions/adActions";
+import { getCategoriesStats } from "../../actions/statsActions";
 
 class Landing extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      category: ""
+      category: "",
+      stats: this.props.stats
     };
 
     this.onCategoryCardClick = this.onCategoryCardClick.bind(this);
@@ -31,6 +33,16 @@ class Landing extends Component {
 
   onCategoryCardClick(cardCategory) {
     this.props.filterAds({ category: cardCategory }, this.props.history);
+  }
+
+  componentWillMount() {
+    this.props.getCategoriesStats();
+  }
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (nextProps.stats) {
+      this.setState({ stats: nextProps.stats });
+    }
   }
 
   render() {
@@ -54,6 +66,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.props.stats.administracija.totalads}
+              avghourlyrate={this.props.stats.administracija.avghourlyrate}
+              lastadcreatedat={this.props.stats.administracija.lastadcreatedat}
             />
 
             <CategoryCard
@@ -63,6 +78,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.anketiranje.totalads}
+              avghourlyrate={this.state.stats.anketiranje.avghourlyrate}
+              lastadcreatedat={this.state.stats.anketiranje.lastadcreatedat}
             />
 
             <CategoryCard
@@ -72,6 +90,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.ciscenje.totalads}
+              avghourlyrate={this.state.stats.ciscenje.avghourlyrate}
+              lastadcreatedat={this.state.stats.ciscenje.lastadcreatedat}
             />
           </div>
 
@@ -83,6 +104,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.fizickiposlovi.totalads}
+              avghourlyrate={this.state.stats.fizickiposlovi.avghourlyrate}
+              lastadcreatedat={this.state.stats.fizickiposlovi.lastadcreatedat}
             />
 
             <CategoryCard
@@ -92,6 +116,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.ljepota.totalads}
+              avghourlyrate={this.state.stats.ljepota.avghourlyrate}
+              lastadcreatedat={this.state.stats.ljepota.lastadcreatedat}
             />
 
             <CategoryCard
@@ -101,6 +128,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.prijevoz.totalads}
+              avghourlyrate={this.state.stats.prijevoz.avghourlyrate}
+              lastadcreatedat={this.state.stats.prijevoz.lastadcreatedat}
             />
           </div>
 
@@ -112,6 +142,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.prodaja.totalads}
+              avghourlyrate={this.state.stats.prodaja.avghourlyrate}
+              lastadcreatedat={this.state.stats.prodaja.lastadcreatedat}
             />
 
             <CategoryCard
@@ -121,6 +154,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.sportizdravlje.totalads}
+              avghourlyrate={this.state.stats.sportizdravlje.avghourlyrate}
+              lastadcreatedat={this.state.stats.sportizdravlje.lastadcreatedat}
             />
 
             <CategoryCard
@@ -130,6 +166,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.turizam.totalads}
+              avghourlyrate={this.state.stats.turizam.avghourlyrate}
+              lastadcreatedat={this.state.stats.turizam.lastadcreatedat}
             />
           </div>
 
@@ -141,6 +180,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.ugostiteljstvo.totalads}
+              avghourlyrate={this.state.stats.ugostiteljstvo.avghourlyrate}
+              lastadcreatedat={this.state.stats.ugostiteljstvo.lastadcreatedat}
             />
 
             <CategoryCard
@@ -150,6 +192,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.ostalo.totalads}
+              avghourlyrate={this.state.stats.ostalo.avghourlyrate}
+              lastadcreatedat={this.state.stats.ostalo.lastadcreatedat}
             />
 
             <CategoryCard
@@ -159,6 +204,9 @@ class Landing extends Component {
               onCategoryCardClick={e =>
                 this.onCategoryCardClick(e.target.value)
               }
+              totalads={this.state.stats.svekategorije.totalads}
+              avghourlyrate={this.state.stats.svekategorije.avghourlyrate}
+              lastadcreatedat={this.state.stats.svekategorije.lastadcreatedat}
             />
           </div>
         </div>
@@ -170,10 +218,11 @@ class Landing extends Component {
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,
-  ads: state.ads
+  ads: state.ads,
+  stats: state.stats
 });
 
 export default connect(
   mapStateToProps,
-  { filterAds }
+  { filterAds, getCategoriesStats }
 )(withRouter(Landing));

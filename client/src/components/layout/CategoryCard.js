@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import "./CategoryCard.css";
+import Moment from "react-moment";
+import "moment-timezone";
+import "moment/locale/hr";
 
 class CategoryCard extends Component {
   render() {
-    const { imgSrc, title, onCategoryCardClick } = this.props;
+    const {
+      imgSrc,
+      title,
+      onCategoryCardClick,
+      totalads,
+      avghourlyrate,
+      lastadcreatedat
+    } = this.props;
 
     return (
       <div className="card mb-4 shadow-sm">
@@ -15,22 +25,26 @@ class CategoryCard extends Component {
           <h2 className="card-title">{title}</h2>
           <ul className="list-unstyled mt-3 mb-4">
             <li>
-              Oglasa u posljednjem tjednu:{" "}
-              <span className="badge badge-dark">1</span>
+              Ukupno oglasa:{" "}
+              <span className="badge badge-dark">{totalads}</span>
             </li>
             <li>
-              Ukupno oglasa: <span className="badge badge-dark">14</span>
+              Posljednja satnica:{" "}
+              <span className="badge badge-dark">
+                {round(avghourlyrate, 2)} kn
+              </span>
             </li>
-            <li>
-              Prosječna satnica: <span className="badge badge-dark">25 kn</span>
-            </li>
-            <br />
-            <p className="card-text">
-              <small className="text-muted">
-                Posljednji oglas: prije 4 sata
-              </small>
-            </p>
           </ul>
+          {totalads !== 0 ? (
+            <div className="text-muted text-center">
+              <small>
+                Posljednji oglas: <Moment fromNow>{lastadcreatedat}</Moment>
+              </small>
+            </div>
+          ) : (
+            <br />
+          )}
+          <br />
           {/*<Link*/}
           {/*to={{*/}
           {/*pathname: "/oglasi",*/}
@@ -54,5 +68,10 @@ class CategoryCard extends Component {
     );
   }
 }
+
+const round = (value, precision) => {
+  let multiplier = Math.pow(10, precision || 0);
+  return Math.round(value * multiplier) / multiplier;
+};
 
 export default CategoryCard;

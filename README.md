@@ -1,4 +1,4 @@
-﻿﻿# Sezonac
+﻿# Sezonac
 
 Web app for searching seasonal jobs.
 
@@ -30,25 +30,20 @@ You need to have [npm](https://www.npmjs.com/get-npm "Click here to install npm.
 
 ### Quick start
 
-
-Step | Command | Explanation
---- | --- | ---
-0 |      | *Clone the project and extract it. In the config folder create "keys_dev.js" file. In that file paste the code given below this table.*
-1 |      | *Open terminal in the project root*
-2 | `npm install` | *Install server dependencies*
-3 | `cd client` | *Open "client" folder*
-4 | `npm install` | *Install client dependencies*
-5 | `cd ..` | *Go back to the project's root folder*
-6 | `npm run dev` | *Run the server and the client simultaneously.*
-7 |      | *Paste "localhost:3000" in the URL. Client runs on port 3000, server on port 5000.*
+| Step | Command       | Explanation                                                                                                                             |
+| ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 0    |               | _Clone the project and extract it. In the config folder create "keys_dev.js" file. In that file paste the code given below this table._ |
+| 1    |               | _Open terminal in the project root_                                                                                                     |
+| 2    | `npm install` | _Install server dependencies_                                                                                                           |
+| 3    | `cd client`   | _Open "client" folder_                                                                                                                  |
+| 4    | `npm install` | _Install client dependencies_                                                                                                           |
+| 5    | `cd ..`       | _Go back to the project's root folder_                                                                                                  |
+| 6    | `npm run dev` | _Run the server and the client simultaneously._                                                                                         |
+| 7    |               | _Paste "localhost:3000" in the URL. Client runs on port 3000, server on port 5000._                                                     |
 
 Code that needs to be pasted in the keys_dev.js file as described in step 0:
 
-`module.exports = {
-    mongoURI:
-        "mongodb+srv://fakeuserforgithubpurposes:fakeuserforgithubpurposes@cluster0-awywm.mongodb.net/test?retryWrites=true",
-    secretOrKey: "secret"
-};`
+`module.exports = { mongoURI: "mongodb+srv://fakeuserforgithubpurposes:fakeuserforgithubpurposes@cluster0-awywm.mongodb.net/test?retryWrites=true", secretOrKey: "secret" };`
 
 ## Author
 

@@ -1,7 +1,7 @@
-export const categoryNameToCategoryStatName = category => {
+const categoryToCategoryStatName = category => {
   switch (category) {
     case "Administracija":
-      return "administraicija";
+      return "administracija";
 
     case "Anketiranje":
       return "anketiranje";
@@ -37,3 +37,5 @@ export const categoryNameToCategoryStatName = category => {
       return "svekategorije";
   }
 };
+
+module.exports = categoryToCategoryStatName;

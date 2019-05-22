@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GET_ERRORS, CREATE_NEW_AD, FILTER_ADS } from "./types";
+import { getCategoriesStats } from "./statsActions";
 
 import {
   searchBarOptions,
@@ -11,6 +12,24 @@ export const createNewAd = (adData, history) => dispatch => {
   axios
     .post("/oglasi/novi", adData)
     .then(res => {
+      axios
+        .post(
+          `/statistika?category=${adData.category}&amount=${
+            adData.amount
+          }&frequency=${adData.frequency}`
+        )
+        .catch(err => res.json(err));
+
+      axios
+        .post(
+          `/statistika?category=Sve kategorije&amount=${
+            adData.amount
+          }&frequency=${adData.frequency}`
+        )
+        .catch(err => res.json(err));
+
+      getCategoriesStats();
+
       dispatch({
         type: CREATE_NEW_AD,
         payload: res.data

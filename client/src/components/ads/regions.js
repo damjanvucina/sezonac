@@ -1,4 +1,5 @@
 export default [
+  "Grad Zagreb",
   "Bjelovarsko-bilogorska",
   "Brodsko-posavska",
   "Dubrovačko-neretvanska",
@@ -13,11 +14,10 @@ export default [
   "Primorsko-goranska",
   "Sisačko-moslavačka",
   "Splitsko-dalmatinska",
+  "Šibensko-kninska",
   "Varaždinska",
   "Virovitičko-podravska",
   "Vukovarsko-srijemska",
   "Zadarska",
-  "Zagrebačka",
-  "Šibensko-kninska",
-  "Grad Zagreb"
+  "Zagrebačka"
 ];

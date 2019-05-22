@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import jwt_decode from "jwt-decode";
-
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
@@ -15,6 +14,8 @@ import JobCategory from "./components/ads/JobCategory";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { setCurrentAds, setSearchBarOption } from "./actions/adActions";
+import { setCategoriesStats } from "./actions/statsActions";
+
 import {
   searchBarOptionToActionType,
   searchBarOptions
@@ -46,6 +47,13 @@ for (let option of searchBarOptions) {
 
 if (localStorage.ads) {
   store.dispatch(setCurrentAds(JSON.parse(localStorage.ads)));
+}
+
+if (
+  localStorage.categoriesStats &&
+  JSON.parse(localStorage.categoriesStats) != null
+) {
+  store.dispatch(setCategoriesStats(JSON.parse(localStorage.categoriesStats)));
 }
 
 function App() {

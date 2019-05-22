@@ -1,8 +1,7 @@
 const getDefaultSalaryFrequencyOptions = () => [
   "Po satu",
   "Po danu",
-  "Po mjesecu",
-  "Ostalo"
+  "Po mjesecu"
 ];
 
 export default getDefaultSalaryFrequencyOptions;

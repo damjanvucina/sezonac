@@ -60,6 +60,10 @@ const filterCitiesByRegion = region => {
       cities = citiesByRegion.Splitsko_dalmatinska;
       break;
 
+    case "Šibensko-kninska":
+      cities = citiesByRegion.Sibensko_kninska;
+      break;
+
     case "Varaždinska":
       cities = citiesByRegion.Varazdniska;
       break;
@@ -78,10 +82,6 @@ const filterCitiesByRegion = region => {
 
     case "Zagrebačka":
       cities = citiesByRegion.Zagrebacka;
-      break;
-
-    case "Šibensko-kninska":
-      cities = citiesByRegion.Sibensko_kninska;
       break;
 
     case "Grad Zagreb":
