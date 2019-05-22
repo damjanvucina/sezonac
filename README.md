@@ -1,6 +1,6 @@
 ﻿# Sezonac
 
-Web app for searching seasonal jobs.
+Web app for searching seasonal jobs. There are a couple of features still left to implement.
 
 ### Features
 
@@ -43,7 +43,12 @@ You need to have [npm](https://www.npmjs.com/get-npm "Click here to install npm.
 
 Code that needs to be pasted in the keys_dev.js file as described in step 0:
 
-`module.exports = { mongoURI: "mongodb+srv://fakeuserforgithubpurposes:fakeuserforgithubpurposes@cluster0-awywm.mongodb.net/test?retryWrites=true", secretOrKey: "secret" };`
+`module.exports = {
+  mongoURI:
+    "mongodb+srv://fakeuserforgithubpurposes:fakeuserforgithubpurposes@cluster0-awywm.mongodb.net/test?retryWrites=true",
+  secretOrKey: "secret",
+  statsCollectionId: "5ce553a8c207983db0e19ef8"
+};`
 
 ## Author
 
